@@ -1,4 +1,4 @@
-# qGettext
+# i18n-gettext
 
 `i18n-gettext`支持从vm，string，mustache三种格式的文件提取gettext标记。同时可以将翻译好的`.po`文件转换为`.json`文件
 
