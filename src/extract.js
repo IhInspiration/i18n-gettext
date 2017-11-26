@@ -94,7 +94,6 @@ export class Extractor {
       return new RegExp(`#${attribute}\\\(${startOrEndQuotes}([\\s\\S]+?)${startOrEndQuotes}\\\)`, 'g');
     }));
 
-    console.log(this.filterRegexps);
   }
 
   parse(filename, content) {
@@ -132,8 +131,9 @@ export class Extractor {
     catalog.headers = {
       'Content-Type': 'text/plain; charset=utf-8',
       'Content-Transfer-Encoding': '8bit',
-      'Generated-By': 'easygettext',
+      'Generated-By': 'i18n-gettext',
       'Project-Id-Version': '',
+      'Author': 'jackwang',
     };
 
     for (let msgid in this.items) {
