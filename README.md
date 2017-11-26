@@ -24,7 +24,6 @@ product.vm
 ```
 <li><a href="javascript:void(0)"><span>#qMessage('你好，世界！')</span></a></li>
 <textarea name="test" placeholder="#qMessage('多个用逗号隔开')" class="hotel_textarea">#qMessage('你好，朋友！')</textarea>
-
 ```
 
 tipTmpl.string
@@ -37,12 +36,17 @@ tipTmpl.string
 
 gettext-extract支持的参数
 
---startDelimiter <sign> 开始符，默认为`[#`，注意此处只能应用于`string/mustache`，同时注意`string/mustache`的标记符为`{{`和`}}`，请不要改成这个，否则会出现混乱，另外，`vm`由于为函数，因此必须用#号开头，采用传入标记内容的方式
---endDelimiter <sign> 结束符，默认为`#]`，其他同开始符
---attribute <attribute> 可以添加多个其他的属性，默认为qMessage，i18n，get-text，translate
---output <file> 输出到的文件
---quiet 加上之后不会提示出错信息
-<files> 最后跟的就是要提取的文件/文件
+`--startDelimiter <sign>` 开始符，默认为`[#`，注意此处只能应用于`string/mustache`，同时注意`string/mustache`的标记符为`{{`和`}}`，请不要改成这个，否则会出现混乱，另外，`vm`由于为函数，因此必须用#号开头，采用传入标记内容的方式
+
+`--endDelimiter <sign>` 结束符，默认为`#]`，其他同开始符
+
+`--attribute <attribute>` 可以添加多个其他的属性，默认为qMessage，i18n，get-text，translate
+
+`--output <file>` 输出到的文件
+
+`--quiet` 加上之后不会提示出错信息
+
+`<files>` 最后跟的就是要提取的文件/文件
 
 示例
 
@@ -57,8 +61,9 @@ gettext-extract --startDelimiter '<%' --endDelimiter '%>' --output extract.pot p
 
 参数
 
---dir <directory> 要输出语言包`.json`的目录
-<files> 最后面接所有的`.po`文件
+`--dir <directory>` 要输出语言包`.json`的目录
+
+`<files>` 最后面接所有的`.po`文件
 
 示例
 
