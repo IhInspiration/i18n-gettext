@@ -1,11 +1,11 @@
 {
   "name": "i18n-gettext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "从string/mustache/vm提取gettext字符串的简单工具",
   "main": "dist/index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IhInspiration/qGettext"
+    "url": "https://github.com/IhInspiration/i18n-gettext"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
