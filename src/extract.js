@@ -90,8 +90,7 @@ export class Extractor {
 
     // For VM
     this.filterRegexps.push.apply(this.filterRegexps, this.options.attributes.map((attribute) => {
-      const startOrEndQuotes = `(?:\\&quot;|[\\'"])`;  // 单双引号和html引号标记
-      return new RegExp(`#${attribute}\\\(${startOrEndQuotes}([\\s\\S]+?)${startOrEndQuotes}\\\)`, 'g');
+      return new RegExp(`#${attribute}\\(['"]([^'"]+)['"]`, 'g');
     }));
 
   }

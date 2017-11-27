@@ -8,7 +8,7 @@ import minimist from 'minimist';
 import * as constants from './constants.js';
 import {Extractor} from './extract.js';
 
-const PROGRAM_NAME = 'easygettext';
+const PROGRAM_NAME = 'i18n-gettext';
 const ALLOWED_EXTENSIONS = ['string', 'mustache', 'vm'];
 
 // 处理参数

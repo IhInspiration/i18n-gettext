@@ -1,6 +1,6 @@
 {
   "name": "i18n-gettext",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "从string/mustache/vm提取gettext字符串的简单工具",
   "main": "dist/index",
   "repository": {
@@ -11,7 +11,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "prepublish": "babel --presets es2015 --plugins transform-object-assign --source-maps true src --out-dir dist/",
+    "build": "babel --presets es2015 --plugins transform-object-assign --source-maps true src --out-dir dist/",
     "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
     "cover": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha src/**/*.spec.js -- --require babel-register"
   },
