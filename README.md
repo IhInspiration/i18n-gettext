@@ -116,6 +116,18 @@ npm run test
 npm run cover
 ```
 
+### CLI使用方法
+
+```
+npm run build
+```
+
+然后执行`extract-cli.js`，`compile-cli.js`同理，`gettext-extract`命令对应`extract-cli.js`文件，`gettext-compile`命令对应`compile-cli.js`文件，使用方法上面已经提到，此处不赘述。
+
+```
+./dist/extract-cli.js --attribute q-translate ~/output.html
+```
+
 ### 致谢
 
 感谢`easygettext`作者，代码有部分来自此库，在此给予感谢~

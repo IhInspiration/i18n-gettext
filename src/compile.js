@@ -35,5 +35,3 @@ export function po2json(poContent) {
     messages: sanitizePoData(catalog.items),
   };
 }
-
-
