@@ -1,5 +1,7 @@
 # i18n-gettext
 
+[![Build Status](https://travis-ci.org/IhInspiration/i18n-gettext.svg?branch=master)]
+
 `i18n-gettext`支持从vm，string，mustache三种格式的文件提取gettext标记。同时可以将翻译好的`.po`文件转换为`.json`文件
 
 ## 前言
