@@ -6,7 +6,6 @@ import fs from 'fs';
 import {po2json} from './compile.js';
 import minimist from 'minimist';
 
-
 // Process arguments
 const argv = minimist(process.argv.slice(2));
 const files = argv._.sort() || [];
@@ -37,7 +36,6 @@ for (let file of files) {
     process.exit(1);
   }
 }
-
 
 for (let key in translationData) {
   if (translationData.hasOwnProperty(key)) {

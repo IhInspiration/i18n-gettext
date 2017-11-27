@@ -23,6 +23,12 @@ describe('Extractor object', () => {
     expect(extractor.toString()).to.equal(fixtures.POT_OUTPUT_2);
   });
 
+  it('should output a correct POT file from the .vm files(include quotes)', () => {
+    const extractor = new Extractor();
+    extractor.parse(fixtures.FILENAME_2, fixtures.VM0_CTX2);
+    expect(extractor.toString()).to.equal(fixtures.POT_OUTPUT_4);
+  });
+
   it('should output a correct POT file from multiple .vm&.string files', () => {
     const extractor = new Extractor();
     extractor.parse(fixtures.FILENAME_0, fixtures.STRING0_CTX0);

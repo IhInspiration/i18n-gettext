@@ -71,6 +71,7 @@ files.forEach(function(filename) {
     process.exit(1);
   }
 });
+
 // 输出文件到命令行指定的文件
 if (outputFile) {
   fs.writeFileSync(outputFile, extractor.toString());

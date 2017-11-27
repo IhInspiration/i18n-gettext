@@ -24,7 +24,6 @@ export function sanitizePoData(poItems) {
   return messages;
 }
 
-
 export function po2json(poContent) {
   const catalog = Pofile.parse(poContent);
   if (!catalog.headers.Language) {

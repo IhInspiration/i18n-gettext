@@ -85,6 +85,20 @@ msgid "请输入1-10000之间的数字，支持两位小数"
 msgstr ""
 `;
 
+export const VM0_CTX2 =  `<li class="current"><a href="#">#qMessage('你好<a href="#">测试</a>世界')</a></li>`;
+export const POT_OUTPUT_4 = `msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\\n"
+"Content-Transfer-Encoding: 8bit\\n"
+"Generated-By: i18n-gettext\\n"
+"Project-Id-Version: \\n"
+"Author: jackwang\\n"
+
+#: test.vm
+msgid "你好<a href=\\"#\\">测试</a>世界"
+msgstr ""
+`;
+
 export const INPUT_PO = `msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
