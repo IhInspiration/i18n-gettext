@@ -156,7 +156,7 @@ export class Extractor {
       while ((matches = reg.exec(content)) !== null) {
         const reference = new TranslationReference(filename, content, matches.index);
         if (matches !== null) {
-          const text = matches[1];
+          const text = matches[1] || matches[2];
           if (text.length !== 0) {
             tokensFromFilters.push(new TranslationInfo(text, reference));
           }
