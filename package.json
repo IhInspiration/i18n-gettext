@@ -1,6 +1,6 @@
 {
   "name": "i18n-gettext",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "从string/mustache/vm提取gettext字符串的简单工具",
   "main": "dist/index",
   "repository": {
