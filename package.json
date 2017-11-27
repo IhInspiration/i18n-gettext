@@ -13,7 +13,7 @@
   "scripts": {
     "prepublish": "babel --presets es2015 --plugins transform-object-assign --source-maps true src --out-dir dist/",
     "test": "mocha --compilers js:babel-core/register src/**/*.spec.js",
-    "cover": "babel-node node_modules/isparta/bin/isparta cover --report text  node_modules/mocha/bin/_mocha -- src/**/*.spec.js"
+    "cover": "babel-node node_modules/isparta/bin/isparta cover --report text node_modules/mocha/bin/_mocha -- src/**/*.spec.js"
   },
   "keywords": [],
   "author": "jm.wang",
