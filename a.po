@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Language-Team: English\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Project-Id-Version: \n"
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:94
+msgid "1.系统默认认为“普通半自助/跟团游”，如果您的产品支持每一个订单单独成团的话请勾选“私家团”"
+msgstr "哈哈"
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:95
+msgid "2.如果勾选“私家团”必须支持每笔订单单独成团，系统也会标记［一单一团］的标签；如果有消费者投诉违反约定，将按<a target=\"_blank\" href=\"/static/product/serviceStandard.html\">私家团规范管理办法进行</a>处理"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:58
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:64
+msgid "产品等级"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:55
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:61
+msgid "价格/库存"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:57
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:63
+msgid "其他信息"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:54
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:60
+msgid "参考行程"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:52
+msgid "基本信息"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:56
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:62
+msgid "增值服务"
+msgstr ""
+
+#: /Users/qitmac000207/workspace/i18n-gettext/test/product_group.vm:93
+msgid "注意："
+msgstr ""

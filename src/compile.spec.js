@@ -5,9 +5,9 @@ import {expect} from 'chai';
 
 function mockPoItem(overrides = {}) {
   return Object.assign({
-    msgid: 'Hello world',
+    msgid: '你好，世界！',
     msgctxt: null,
-    msgstr: ['Bonjour Monde'],
+    msgstr: ['Hello，World!'],
     flags: {},
     obsolete: false,
   }, overrides);
@@ -17,25 +17,25 @@ describe('sanitizePoData', () => {
 
   it('should sanitize input PO item', () => {
     const normalItem = mockPoItem();
-    const obsoleteItem = mockPoItem({msgid: 'bar', obsolete: true});
-    const fuzzyItem = mockPoItem({msgid: 'foo', flags: {fuzzy: true}});
-    const bogusItem = mockPoItem({msgid: 'baz', msgstr: []});
-    expect(sanitizePoData([normalItem])).to.deep.equal({'Hello world': 'Bonjour Monde'});
+    const obsoleteItem = mockPoItem({msgid: '测试1', obsolete: true});
+    const fuzzyItem = mockPoItem({msgid: '测试2', flags: {fuzzy: true}});
+    const bogusItem = mockPoItem({msgid: '测试3', msgstr: []});
+    expect(sanitizePoData([normalItem])).to.deep.equal({'你好，世界！': 'Hello，World!'});
     expect(sanitizePoData([obsoleteItem])).to.deep.equal({});
     expect(sanitizePoData([fuzzyItem])).to.deep.equal({});
     expect(sanitizePoData([bogusItem])).to.deep.equal({});
     expect(sanitizePoData([normalItem, obsoleteItem, fuzzyItem, bogusItem]))
-      .to.deep.equal({'Hello world': 'Bonjour Monde'});
+      .to.deep.equal({'你好，世界！': 'Hello，World!'});
   });
 
   it('should keep context', () => {
     const normalItem = mockPoItem();
-    const contextItem = mockPoItem({msgctxt: 'in Belize', msgstr: ['Hola Amigos']});
+    const contextItem = mockPoItem({msgctxt: '辅助文本测试', msgstr: ['Hello，World!(auxiliary)']});
     expect(sanitizePoData([normalItem, contextItem]))
       .to.deep.equal({
-        'Hello world': {
-          '': 'Bonjour Monde',
-          'in Belize': 'Hola Amigos',
+        '你好，世界！': {
+          '': 'Hello，World!',
+          '辅助文本测试': 'Hello，World!(auxiliary)',
         },
       });
   });

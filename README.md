@@ -103,7 +103,15 @@ gettext-compile --dir ./i18n/ en.po zh-CN.po de.po
 
 ### 测试
 
-暂时未做，稍微补上
+利用`mocha`执行测试
+
+```
+npm test
+```
+
+### 致谢
+
+感谢`easygettext`作者，代码有部分来自此库，在此给予感谢~
 
 ### 许可
 

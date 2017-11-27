@@ -1,25 +1,6 @@
 import Pofile from 'pofile';
 
-
-/**
- * sanitizePoData
- *
- * Returns a sanitized po data dictionary where:
- * - no fuzzy or obsolete strings are returned
- * - no empty translations are returned
- *
- * @argument poItems: Object, items from the PO catalog
- *
- * @returns jsonData: Object, sanitized PO data
- *
- * {
- *   "Hello World": "Bonjour monde",
- *   "Thank you": {
- *     "à ma mère": "Merci, m'man",
- *     "à mon patron": "Je vous remercie",
- *   }
- * }
- */
+// 分析经过gettext和i18n-gettext合并后的相关参数，生成json
 export function sanitizePoData(poItems) {
   const messages = {};
 

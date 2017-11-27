@@ -37,10 +37,7 @@ for (let file of files) {
     process.exit(1);
   }
 }
-// Output results
-// const translationString = JSON.stringify(translationData);
-// if (outputFile) {
-console.log(translationData);
+
 
 for (let key in translationData) {
   if (translationData.hasOwnProperty(key)) {
@@ -53,8 +50,3 @@ for (let key in translationData) {
     }
   }
 }
-
-
-// } else {
-  // console.log(translationString);
-// }

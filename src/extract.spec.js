@@ -4,7 +4,6 @@ import * as fixtures from './test-fixtures.js';
 
 import {expect} from 'chai';
 
-
 describe('Extractor object', () => {
   it('should output a correct POT file from the .string files', () => {
     const extractor = new Extractor();

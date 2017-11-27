@@ -84,3 +84,59 @@ msgstr ""
 msgid "请输入1-10000之间的数字，支持两位小数"
 msgstr ""
 `;
+
+export const INPUT_PO = `msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "你好世界"
+msgstr "Hello，world！"
+
+msgctxt "辅助翻译文本"
+msgid "你好世界"
+msgstr "Hello，world!(auxiliary)"
+
+msgid "(1 尝试)"
+msgid_plural "({{ remaining }} 尝试)"
+msgstr[0] "(1 attempt)"
+msgstr[1] "({{ remaining }} attempts)"
+
+#, fuzzy
+msgid "fuzzy测试"
+msgstr "不被捕获"
+
+msgid "空串也不会补货"
+msgstr ""`;
+
+export const OUTPUT_DICT = {
+  headers: {
+    '': '',
+    'Content-Transfer-Encoding': '8bit',
+    'Content-Type': 'text/plain; charset=UTF-8',
+    'Language': 'en',
+    'Language-Team': 'none',
+    'Last-Translator': 'Automatically generated',
+    'MIME-Version': '1.0',
+    'PO-Revision-Date': '',
+    'POT-Creation-Date': '',
+    'Plural-Forms': 'nplurals=2; plural=(n > 1);',
+    'Project-Id-Version': '',
+    'Report-Msgid-Bugs-To': '',
+  }, messages: {
+    '(1 尝试)': [
+      '(1 attempt)',
+      '({{ remaining }} attempts)',
+    ],
+    '你好世界': {
+      '': 'Hello，world！',
+      '辅助翻译文本': 'Hello，world!(auxiliary)',
+    },
+  },
+};
