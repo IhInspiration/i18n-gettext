@@ -109,12 +109,18 @@ gettext-compile --dir ./i18n/ en.po zh-CN.po de.po
 利用`mocha`执行测试
 
 ```
-npm test
+npm run test
+```
+执行覆盖率检测
+```
+npm run cover
 ```
 
 ### 致谢
 
 感谢`easygettext`作者，代码有部分来自此库，在此给予感谢~
+
+另外，感谢[WoHal](https://github.com/WoHal)对于我部署覆盖率给予的帮助
 
 ### 许可
 
