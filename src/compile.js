@@ -10,12 +10,12 @@ export function sanitizePoData(poItems) {
       if (!messages[item.msgid]) {
         messages[item.msgid] = {};
       }
-      // Add an array for plural, a single string for singular.
+      // 是否有复数形式
       messages[item.msgid][ctx] = item.msgstr.length === 1 ? item.msgstr[0] : item.msgstr;
     }
   }
 
-  // Strip context from messages that have no context.
+  // 没有上下文的提取
   for (let key in messages) {
     if (Object.keys(messages[key]).length === 1 && messages[key]['']) {
       messages[key] = messages[key][''];

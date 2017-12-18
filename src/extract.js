@@ -5,20 +5,21 @@ import * as constants from './constants.js';
 // -[]/{}()*+?.\^$| 正则特殊符号，后续给这些转义
 const ESCAPE_REGEX = /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;
 
-// 获取文件的行数
-function lineCount(text, charPosition = -1) {
-  let data = text;
-  if (charPosition !== -1) {
-    data = text.substr(0, charPosition);
-  }
-  return data.split(/\r\n|\r|\n/).length;
-}
-
 // 提取文本的文件名+行
+// 参考信息类
 export class TranslationReference {
   constructor(filename, content, charPosition) {
     this.file = filename;
-    this.line = lineCount(content, charPosition);
+    this.line = this.lineCount(content, charPosition);
+  }
+
+  // 获取文件行数
+  lineCount(text, charPosition = -1) {
+    let data = text;
+    if (charPosition !== -1) {
+      data = text.substr(0, charPosition);
+    }
+    return data.split(/\r\n|\r|\n/).length;
   }
 
   // 写入文件中的行说明
@@ -31,32 +32,28 @@ export class TranslationReference {
   }
 }
 
-export class TranslationInfo {
-  constructor(text, reference) {
+export class TranslationInfo { 
+  constructor(text, reference, context, plural) {
     this.text = text;
     this.reference = reference;
-    // TODO 了解作用
-    this.context = constants.MARKER_NO_CONTEXT;
+    this.context = context || constants.MARKER_NO_CONTEXT; // 无上下文使用默认
     // 留作以后扩展单复数使用
-    this.plural = false;
-    // this.comment = '';
+    this.plural = plural;
   }
 
   toPoItem(withLineNumbers = false) {
     let poItem = new Pofile.Item();
     poItem.msgid = this.text;
-    // poItem.msgctxt = this.context === constants.MARKER_NO_CONTEXT ? null : this.context;
+    poItem.msgctxt = this.context === constants.MARKER_NO_CONTEXT ? null : this.context;
     poItem.references = [this.reference.toString(withLineNumbers)];
     // 此处可以留用扩展复数形式
-    // poItem.msgid_plural = this.plural;
+    poItem.msgid_plural = this.plural || null;
     poItem.msgstr = this.plural ? ['', ''] : [];
-    // 注释
-    // poItem.extractedComments = this.comment ? [this.comment] : [];
     return poItem;
   }
 }
 
-
+// 提取类
 export class Extractor {
 
   constructor(options) {
@@ -68,15 +65,6 @@ export class Extractor {
       lineNumbers: false,
     }, options);
 
-    /* Translation items, indexed as:
-     * {
-     *   "msgid1": {
-     *     NOCONTEXT: item,
-     *     "ctx1": item2,
-     *   },
-     *   ...
-     * }
-     */
     this.items = {};
 
     // For mustache/string
@@ -105,22 +93,11 @@ export class Extractor {
       if (!this.items[d.text][d.context]) {
         this.items[d.text][d.context] = d.toPoItem(this.options.lineNumbers);
       } else {
-        // 扩展使用，暂时注释
         let item = this.items[d.text][d.context];
-        // if (item.msgid_plural && d.plural && item.msgid_plural !== d.plural) {
-        //   throw new Error(
-        //     `Incompatible plural definitions for ${d.text}: '${item.msgid_plural}' !== '${d.plural}'`);
-        // }
-        // if (d.plural && !item.msgid_plural) {
-        //   item.msgid_plural = d.plural;
-        // }
         const refString = d.reference.toString(this.options.lineNumbers);
         if (d.reference && item.references.indexOf(refString) === -1) {
           item.references.push(refString);
         }
-        // if (d.comment && item.extractedComments.indexOf(d.comment) === -1) {
-        //   item.extractedComments.push(d.comment);
-        // }
       }
     }
   }
@@ -148,6 +125,7 @@ export class Extractor {
     return catalog.toString();
   }
 
+  // 提取翻译字符串
   _extractTranslationData(filename, content) {
     let matches;
     let tokensFromFilters = [];
