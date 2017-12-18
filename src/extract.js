@@ -32,7 +32,7 @@ export class TranslationReference {
   }
 }
 
-export class TranslationInfo { 
+export class TranslationInfo {
   constructor(text, reference, context, plural) {
     this.text = text;
     this.reference = reference;
@@ -130,7 +130,7 @@ export class Extractor {
     let matches;
     let tokensFromFilters = [];
 
-    this.filterRegexps.map((reg) => {
+    this.filterRegexps.forEach((reg) => {
       while ((matches = reg.exec(content)) !== null) {
         const reference = new TranslationReference(filename, content, matches.index);
         if (matches !== null) {
